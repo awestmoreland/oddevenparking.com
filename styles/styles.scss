@@ -1,18 +1,23 @@
 :root {
   --phase-hours: 24;
   --any-hours: 7;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html,
 body {
+  padding: 0;
+  margin: 0;
   overflow: hidden;
+  font-family: var(--font-body);
 }
 
 .view {
   position: relative;
-  width: 90%;
+  // width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  border: solid 4px #000;
+  // border: solid 4px #000;
 }
 
 .phases {
@@ -45,35 +50,27 @@ body {
     color: #fff;
     padding: 1em;
 
-    &:after {
+    .details {
       left: 1em;
       position: sticky;
+
+      .when {}
+
+      .where {}
     }
   }
 
   .location-any {
     flex: 0 0 calc((var(--any-hours)/var(--phase-hours))*100%);
     background: green;
-
-    &:after {
-      content: "6pm - Any side";
-    }
   }
 
   .location-here {
     background: red;
-
-    &:after {
-      content: "1am - This side";
-    }
   }
 
   .location-there {
     background: orange;
-
-    &:after {
-      content: "1am - That side";
-    }
   }
 
 }

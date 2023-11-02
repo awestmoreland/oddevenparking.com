@@ -1,18 +1,21 @@
 :root {
   --phase-hours: 24;
   --any-hours: 7;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html,
 body {
+  padding: 0;
+  margin: 0;
   overflow: hidden;
+  font-family: var(--font-body);
 }
 
 .view {
   position: relative;
-  width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  border: solid 4px #000;
 }
 
 .phases {
@@ -38,7 +41,7 @@ body {
   color: #fff;
   padding: 1em;
 }
-[class^=phase-] [class^=location]:after {
+[class^=phase-] [class^=location] .details {
   left: 1em;
   position: sticky;
 }
@@ -46,20 +49,11 @@ body {
   flex: 0 0 calc(var(--any-hours) / var(--phase-hours) * 100%);
   background: green;
 }
-[class^=phase-] .location-any:after {
-  content: "6pm - Any side";
-}
 [class^=phase-] .location-here {
   background: red;
-}
-[class^=phase-] .location-here:after {
-  content: "1am - This side";
 }
 [class^=phase-] .location-there {
   background: orange;
 }
-[class^=phase-] .location-there:after {
-  content: "1am - That side";
-}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACE;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAIJ;EACE;EACA;;AAEA;EACE;;AAIJ;EACE;;AAEA;EACE;;AAIJ;EACE;;AAEA;EACE%22,%22file%22:%22styles.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACE;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;EAEA;EACA;;;AAIF;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAQJ;EACE;EACA;;AAGF;EACE;;AAGF;EACE%22,%22file%22:%22styles.css%22%7D */
