@@ -10,6 +10,18 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: var(--font-body);
+  box-sizing: border-box;
+}
+html *,
+html *:before,
+html *:after,
+body *,
+body *:before,
+body *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
 }
 
 .view {
@@ -39,15 +51,42 @@ body {
   align-items: center;
   flex: 1;
   color: #fff;
-  padding: 1em;
+  padding-inline: 1em;
 }
 [class^=phase-] [class^=location] .details {
   left: 1em;
   position: sticky;
 }
+[class^=phase-] [class^=location] .delineations {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: flex;
+  display: none;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  list-style: none;
+  counter-reset: hours 1;
+}
+[class^=phase-] [class^=location] .delineations li {
+  position: relative;
+  width: 2px;
+  height: 1em;
+  background: #000;
+}
+[class^=phase-] [class^=location] .delineations li::after {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, -0.5em);
+  content: counter(hours);
+  counter-increment: hours;
+  font-size: 0.5em;
+}
 [class^=phase-] .location-any {
   flex: 0 0 calc(var(--any-hours) / var(--phase-hours) * 100%);
   background: green;
+  counter-reset: hours 7;
 }
 [class^=phase-] .location-here {
   background: red;
@@ -56,4 +95,4 @@ body {
   background: orange;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACE;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;EAEA;EACA;;;AAIF;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAQJ;EACE;EACA;;AAGF;EACE;;AAGF;EACE%22,%22file%22:%22styles.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACE;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;EACA;EACA;;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;EAGE;EACA;EACA;EACA;;;AAIJ;EACE;EAEA;EACA;;;AAIF;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAOF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;AAOR;EACE;EACA;EACA;;AAGF;EACE;;AAGF;EACE%22,%22file%22:%22styles.css%22%7D */

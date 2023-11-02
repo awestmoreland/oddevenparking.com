@@ -10,6 +10,16 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: var(--font-body);
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+  }
 }
 
 .view {
@@ -48,7 +58,7 @@ body {
     align-items: center;
     flex: 1;
     color: #fff;
-    padding: 1em;
+    padding-inline: 1em;
 
     .details {
       left: 1em;
@@ -58,11 +68,42 @@ body {
 
       .where {}
     }
+
+    .delineations {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      display: flex;
+      display: none; // needs work
+      justify-content: space-evenly;
+      align-items: flex-end;
+      list-style: none;
+      counter-reset: hours 1;
+
+      li {
+        position: relative;
+        width: 2px;
+        height: 1em;
+        background: #000;
+
+        &::after {
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          transform: translate(-50%, -0.5em);
+          content: counter(hours);
+          counter-increment: hours;
+          font-size: 0.5em;
+        }
+      }
+    }
+
   }
 
   .location-any {
     flex: 0 0 calc((var(--any-hours)/var(--phase-hours))*100%);
     background: green;
+    counter-reset: hours 7;
   }
 
   .location-here {
