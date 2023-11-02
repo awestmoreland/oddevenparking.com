@@ -1,110 +1,133 @@
-<link
-  rel="stylesheet"
-  href="styles/styles.css"
->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Which side do I park on?
+  </title>
+  <link
+    rel="stylesheet"
+    href="styles/styles.css"
+  >
+</head>
+<body>
+  <header>
+    <p>
+      It's <span class="header-text-today"></span>.
+    </p>
+    <p>
+      That's an <span class="header-text-odd-even"></span> date, so you should park on the side of the street <span class="header-text-proximity"></span> the house.
+    </p>
+  </header>
 
-<div class="view">
+  <div class="view">
 
-  <div class="phases" data-current-date="odd">
+    <div class="phases" data-current-date="odd">
 
-    <!--  Day (phase) runs 1am-1am  -->
-    <div class="phase-odd">
+      <!--  Day (phase) runs 1am-1am  -->
+      <div class="phase-odd">
 
-      <div class="location-here active">
-        <div class="details">
-          <span class="when">
-            1am&mdash;6pm:
-          </span>
-          <span class="where">
-            Near the house
-            <!--
-              TODO:
-              <span class="duration">for the next 5h 23m</span>
-            -->
-          </span>
+        <div class="location-here active">
+          <div class="details">
+            <span class="when">
+              <!-- TODO: add day of week -->
+              1am&mdash;6pm:
+            </span>
+            <span class="where">
+              Near the house
+              <!--
+                TODO:
+                <span class="duration">for the next 5h 23m</span>
+              -->
+            </span>
+          </div>
+
+          <ol class="delineations">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
         </div>
 
-        <ol class="delineations">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
-
-      <div class="location-any">
-        <div class="details">
-          <span class="when">
-            6pm&mdash;1am:
-          </span>
-          <span class="where">
-            Either side
-          </span>
+        <div class="location-any">
+          <div class="details">
+            <span class="when">
+              6pm&mdash;1am:
+            </span>
+            <span class="where">
+              Either side
+            </span>
+          </div>
         </div>
+
       </div>
 
+      <div class="phase-even">
+
+        <div class="location-there">
+          <div class="details">
+            <span class="when">
+              <!-- TODO: add day of week -->
+              1am&mdash;6pm:
+            </span>
+            <span class="where">
+              Away from the house
+            </span>
+          </div>
+
+          <ol class="delineations">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+
+        <div class="location-any">
+          <div class="details">
+            <span class="when">
+              6pm&mdash;1am:
+            </span>
+            <span class="where">
+              Either side
+            </span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="phase-even">
-
-      <div class="location-there">
-        <div class="details">
-          <span class="when">
-            1am&mdash;6pm:
-          </span>
-          <span class="where">
-            Away from the house
-          </span>
-        </div>
-
-        <ol class="delineations">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
-
-      <div class="location-any">
-        <div class="details">
-          <span class="when">
-            6pm&mdash;1am:
-          </span>
-          <span class="where">
-            Either side
-          </span>
-        </div>
-      </div>
-
-    </div>
   </div>
 
-</div>
+  <script src="scripts/scripts.js"></script>
 
-<script src="scripts/scripts.js"></script>
+</body>
+</html>

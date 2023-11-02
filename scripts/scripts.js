@@ -1,5 +1,8 @@
 const interval = 60000; // milliseconds
 const phases = document.querySelector('.phases');
+const headerTextToday = document.querySelector('.header-text-today');
+const headerTextOddEven = document.querySelector('.header-text-odd-even');
+const headerTextProximity = document.querySelector('.header-text-proximity');
 
 // Call immediately
 myCallback();
@@ -37,5 +40,11 @@ function myCallback() {
 
   // set negative left margin equal to percentage of current phase elapsed
   phases.style.marginLeft = `-${percentageElapsed}%`;
+
+  // Update the header
+  headerTextToday.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+  headerTextOddEven.textContent = isEvenDate ? 'even' : 'odd';
+  headerTextProximity.textContent = isEvenDate ? 'away from' : 'closest to';
+
 
 }
