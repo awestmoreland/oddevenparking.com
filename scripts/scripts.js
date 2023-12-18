@@ -44,7 +44,7 @@ function myCallback() {
   // Update the header
   headerTextToday.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
   headerTextOddEven.textContent = isEvenDate ? 'even' : 'odd';
-  headerTextProximity.textContent = isEvenDate ? 'away from' : 'closest to';
+  headerTextProximity.textContent = isEvenDate ? 'furthest from' : 'closest to';
 
 
 }
