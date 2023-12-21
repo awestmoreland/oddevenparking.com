@@ -1,13 +1,9 @@
 const interval = 60000; // milliseconds
 const phases = document.querySelector('.phases');
-const header = document.querySelector('.page-header');
-const headerTextToday = document.querySelector('.header-text-today');
-const headerTextOddEvenNow = document.querySelectorAll('.header-text-odd-even-now');
-const headerTextOddEvenNext = document.querySelectorAll('.header-text-odd-eve-next');
-const headerTextProximityNow = document.querySelectorAll('.header-text-proximity-now');
-const headerTextProximityNext = document.querySelectorAll('.header-text-proximity-next');
+const bodyTag = document.querySelector('body');
+const textProximity = document.querySelectorAll('.text-proximity-now');
 
-let currentHour, dayOfMonthNow, dayOfMonthNex;
+let currentHour, dayOfMonth;
 
 // Call immediately
 myCallback();
@@ -22,11 +18,7 @@ function myCallback() {
   // -----------------
 
     const now = new Date();
-    dayOfMonthNow = now.getDate(); // today's day of month
-
-    dayOfMonthNext = new Date(now);
-    dayOfMonthNext.setDate(now.getDate() + 1); // tomorrow's day of month
-
+    dayOfMonth = now.getDate(); // today's day of month
     currentHour = now.getHours();
 
     // Set the target time (start of phase = 1 AM)
@@ -50,22 +42,20 @@ function myCallback() {
   // Update the page
   // ---------------
 
-  // set negative left margin equal to percentage of current phase elapsed
+    // set negative left margin equal to percentage of current phase elapsed
     phases.style.marginLeft = `-${percentageElapsed}%`;
 
-    // Set the data-current-date attribute accordingly to affect styling
-    phases.setAttribute("data-current-date", dateIsEven(dayOfMonthNow) ? "even" : "odd");
+    // Update the bodyTag
+    bodyTag.setAttribute('data-date-is-even', dateIsEven(dayOfMonth) ? 'true' : 'false');
+    bodyTag.setAttribute('data-side-matters', sideMatters(currentHour) ? 'true' : 'false');
 
-    // Update the header
-    header.classList.add(dateIsEven(dayOfMonthNow) ? 'is-even' : 'is-odd');
-    header.classList.remove(dateIsEven(dayOfMonthNow) ? 'is-odd' : 'is-even');
-    header.setAttribute('data-side-matters', sideMatters(currentHour) ? 'true' : 'false');
-    headerTextToday.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-    updateEach(headerTextOddEvenNow, dateIsEven(dayOfMonthNow) ? 'even' : 'odd');
-    updateEach(headerTextOddEvenNext, dateIsEven(dayOfMonthNext) ? 'odd' : 'even');
-    updateEach(headerTextProximityNow, dateIsEven(dayOfMonthNow) ? 'furthest from' : 'closest to');
-    updateEach(headerTextProximityNext, dateIsEven(dayOfMonthNext) ? 'closest to' : 'furthest from');
-}
+    // Edge case: it's the 29th or 31st, so two odd days in a row
+    bodyTag.setAttribute('data-move-required', (dayOfMonth == 31 || dayOfMonth == 29) ? 'false' : 'true');
+
+    // Update proximity text
+    updateEach(textProximity, dateIsEven(dayOfMonth) ? 'furthest from' : 'closest to');
+
+  }
 
 function updateEach(elements, text) {
   elements.forEach(element => {
@@ -81,7 +71,6 @@ function dateIsEven(testDate) {
   }
   // After 1am, the day is the current day
   else {
-    // This needs calculating in case it's a 31-day month
     return testDate % 2 === 0;
   }
 }

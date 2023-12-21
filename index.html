@@ -4,33 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Which side do I park on?
+    Which side do I park on NOW?
   </title>
   <link
     rel="stylesheet"
-    href="styles/styles.css"
+    href="styles/styles.css?1234"
   >
 </head>
 <body>
   <header class="page-header">
-    <p>
-      It's <span class="header-text-today"></span>.
+    <h1>
+      Which side do I park on NOW?
+    </h1>
+    <p class="text-side-specific">
+      The side of the street <span class="text-proximity-now"></span> the house.
     </p>
-    <p class="header-text-side-specific">
-      That's an <span class="header-text-odd-even-now"></span> date, so you should park on the side of the street <span class="header-text-proximity-now"></span> the house now, then sometime between 6pm-1am you'll need to switch sides.
-      <!-- This might sounds a bit weird between midnight and 1am, but that's an edge case 🤷 -->
+    <p class="text-side-agnostic">
+      You can park on
+      <span>either side</span>.
     </p>
-    <p class="header-text-side-agnostic">
-      You can park on either side right now, but you'll want to be on the side of the street <span class="header-text-proximity-next"></span> the house after 1am.
-
-      That's an <span class="header-text-odd-even-next"></span> date, so you should park on the side of the street <span class="header-text-proximity-next"></span> the house.
-    </p>
-    <!--
-      Plain English summary:
-      1am - 6pm:  Park on odd/even side now, but you'll need to switch sides before 1am tomorrow
-      6pm - 1am:  Park on either side right now, but you'll want to be on the even/odd side after 1am
-    -->
-
   </header>
 
   <div class="view">
@@ -148,7 +140,18 @@
 
   </div>
 
-  <script src="scripts/scripts.js"></script>
+  <footer>
+    <p>
+      <span class="text-move-required-true">
+        Sometime between 6pm-1am you'll need to move to the opposite side.
+      </span>
+      <span class="text-move-required-false">
+        You don't need to move tomorrow because that's also an odd date!
+      </span>
+    </p>
+  </footer>
+
+  <script src="scripts/scripts.js?1234"></script>
 
 </body>
 </html>

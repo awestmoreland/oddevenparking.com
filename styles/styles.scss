@@ -2,8 +2,11 @@
   --phase-hours: 24;
   --any-hours: 7;
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-primary: black;
+  --color-negative: white;
+  --color-highlight: cadetblue;
   --phase-any-color: green;
-  --phase-odd-color: red;
+  --phase-odd-color: crimson;
   --phase-even-color: orange;
 }
 
@@ -27,54 +30,92 @@ body {
 
 body {
   font-size: 1.5625vw;
+  text-align: center;
+}
+
+h1 {
+  display: flex;
+  font-size: 3em;
+  height: 2.5em;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-highlight);
+  color: var(--color-negative);
 }
 
 header {
-  padding: 1em;
 
   p {
     font-size: 3em;
     line-height: 1.3;
+    margin: 0.5em 0;
   }
 
   span[class] {
     font-weight: bold;
   }
 
-  &[data-side-matters="true"] {
-    .header-text-side-agnostic {
-      display: none;
-    }
-  }
-
-  &[data-side-matters="false"] {
-    .header-text-side-specific {
-      display: none;
-    }
-  }
-
-  &.is-odd {
-    span[class] {
-      color: var(--phase-odd-color);
-    }
-  }
-
-  &.is-even {
+  [data-date-is-even="true"] & {
     span[class] {
       color: var(--phase-even-color);
     }
   }
 
+  [data-date-is-even="false"] & {
+    span[class] {
+      color: var(--phase-odd-color);
+    }
+  }
+
+}
+
+[data-side-matters="true"] {
+  .text-side-agnostic {
+    display: none;
+  }
+}
+
+[data-side-matters="false"] {
+  .text-side-specific {
+    display: none;
+  }
+}
+
+.text-move-required-false {
+  display: none;
+}
+
+[data-move-required="false"] {
+  .text-move-required-true {
+    display: none;
+  }
+
+  .text-move-required-false {
+    display: block;
+    color: var(--color-highlight);
+  }
+}
 
 
+
+
+footer {
+  padding: 1em;
+
+  p {
+    font-size: 1.75em;
+    line-height: 1.3;
+  }
+
+  span[class] {
+    font-weight: bold;
+  }
 }
 
 .view {
   position: relative;
-  // width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  // border: solid 4px #000;
 
   footer {
     display: flex;
@@ -85,6 +126,7 @@ header {
       font-size: 2em;
       font-weight: bold;
       text-transform: uppercase;
+      opacity: 0.25;
 
       &:first-child:before,
       &:last-child:after {
@@ -102,7 +144,7 @@ header {
   display: flex;
   justify-content: flex-start;
 
-  &[data-current-date="even"] {
+  [data-date-is-even="true"] & {
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
@@ -113,6 +155,7 @@ header {
 [class^=phase-] {
   flex: 0 0 50%;
   display: flex;
+  justify-content: flex-start;
   height: 5em;
 
   &.phase-odd {}
@@ -124,7 +167,7 @@ header {
     display: flex;
     align-items: center;
     flex: 1;
-    color: #fff;
+    color: var(--color-negative);
     padding-inline: 1em;
 
     .details {
@@ -152,7 +195,7 @@ header {
         position: relative;
         width: 2px;
         height: 1em;
-        background: #000;
+        background: var(--color-primary);
 
         &::after {
           position: absolute;
