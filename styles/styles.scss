@@ -2,6 +2,9 @@
   --phase-hours: 24;
   --any-hours: 7;
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --phase-any-color: green;
+  --phase-odd-color: red;
+  --phase-even-color: orange;
 }
 
 html,
@@ -37,6 +40,19 @@ header {
   span[class] {
     font-weight: bold;
   }
+
+  &.is-odd {
+    span[class] {
+      color: var(--phase-odd-color);
+    }
+  }
+
+  &.is-even {
+    span[class] {
+      color: var(--phase-even-color);
+    }
+  }
+
 }
 
 .view {
@@ -45,6 +61,26 @@ header {
   margin: 0 auto;
   overflow: hidden;
   // border: solid 4px #000;
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+
+    span {
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:first-child:before,
+      &:last-child:after {
+        // content: "\2193"; // down
+        content: "\2191"; // up
+        display: inline-block;
+        transform: translateY(-0.175em);
+      }
+    }
+  }
 }
 
 .phases {
@@ -120,16 +156,16 @@ header {
 
   .location-any {
     flex: 0 0 calc((var(--any-hours)/var(--phase-hours))*100%);
-    background: green;
+    background: var(--phase-any-color);
     counter-reset: hours 7;
   }
 
   .location-here {
-    background: red;
+    background: var(--phase-odd-color);
   }
 
   .location-there {
-    background: orange;
+    background: var(--phase-even-color);
   }
 
 }

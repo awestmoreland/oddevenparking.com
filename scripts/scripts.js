@@ -1,8 +1,12 @@
 const interval = 60000; // milliseconds
 const phases = document.querySelector('.phases');
+const header = document.querySelector('.page-header');
 const headerTextToday = document.querySelector('.header-text-today');
-const headerTextOddEven = document.querySelector('.header-text-odd-even');
-const headerTextProximity = document.querySelector('.header-text-proximity');
+const headerTextOddEvenNow = document.querySelector('.header-text-odd-even-now');
+const headerTextOddEvenNext = document.querySelector('.header-text-odd-eve-next');
+const headerTextProximityNow = document.querySelector('.header-text-proximity-now');
+const headerTextProximityNext = document.querySelector('.header-text-proximity-next');
+const currentHour = new Date().getHours();
 
 // Call immediately
 myCallback();
@@ -19,11 +23,8 @@ function myCallback() {
   // Get the day of the month
   const dayOfMonth = now.getDate();
 
-  // Check if the day of the month is odd or even
-  const isEvenDate = dayOfMonth % 2 === 0;
-
   // Set the data-current-date attribute accordingly to affect styling
-  phases.setAttribute("data-current-date", isEvenDate ? "even" : "odd");
+  phases.setAttribute("data-current-date", dateIsEven() ? "even" : "odd");
 
   // Set the target time (start of phase = 1 AM)
   const phaseStart = new Date();
@@ -42,9 +43,23 @@ function myCallback() {
   phases.style.marginLeft = `-${percentageElapsed}%`;
 
   // Update the header
+  header.classList.add(dateIsEven() ? 'is-even' : 'is-odd');
+  header.classList.remove(dateIsEven() ? 'is-odd' : 'is-even');
   headerTextToday.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-  headerTextOddEven.textContent = isEvenDate ? 'even' : 'odd';
-  headerTextProximity.textContent = isEvenDate ? 'furthest from' : 'closest to';
+  headerTextOddEvenNow.textContent = dateIsEven() ? 'even' : 'odd';
+  headerTextOddEvenNext.textContent = dateIsEven() ? 'odd' : 'even';
+  headerTextProximityNow.textContent = dateIsEven() ? 'furthest from' : 'closest to';
+  headerTextProximityNext.textContent = dateIsEven() ? 'closest to' : 'furthest from';
+}
 
-
+function dateIsEven() {
+  // Up until 1am, the day is still the previous day
+  if (currentHour < 1) {
+    return dayOfMonth % 2 === 1;
+  }
+  // After 1am, the day is the current day
+  else {
+    // This needs calculating in case it's a 31-day month
+    return dayOfMonth % 2 === 0;
+  }
 }
