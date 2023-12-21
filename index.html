@@ -16,10 +16,15 @@
     <p>
       It's <span class="header-text-today"></span>.
     </p>
-    <p>
-      That's an <span class="header-text-odd-even"></span> date, so you should park on the side of the street <span class="header-text-proximity"></span> the house.
+    <p class="header-text-side-specific">
+      That's an <span class="header-text-odd-even-now"></span> date, so you should park on the side of the street <span class="header-text-proximity-now"></span> the house now, then sometime between 6pm-1am you'll need to switch sides.
+      <!-- This might sounds a bit weird between midnight and 1am, but that's an edge case 🤷 -->
     </p>
+    <p class="header-text-side-agnostic">
+      You can park on either side right now, but you'll want to be on the side of the street <span class="header-text-proximity-next"></span> the house after 1am.
 
+      That's an <span class="header-text-odd-even-next"></span> date, so you should park on the side of the street <span class="header-text-proximity-next"></span> the house.
+    </p>
     <!--
       Plain English summary:
       1am - 6pm:  Park on odd/even side now, but you'll need to switch sides before 1am tomorrow

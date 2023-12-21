@@ -41,6 +41,18 @@ header {
     font-weight: bold;
   }
 
+  &[data-side-matters="true"] {
+    .header-text-side-agnostic {
+      display: none;
+    }
+  }
+
+  &[data-side-matters="false"] {
+    .header-text-side-specific {
+      display: none;
+    }
+  }
+
   &.is-odd {
     span[class] {
       color: var(--phase-odd-color);
@@ -52,6 +64,8 @@ header {
       color: var(--phase-even-color);
     }
   }
+
+
 
 }
 
