@@ -132,10 +132,16 @@ footer {
       &:first-child:before,
       &:last-child:after {
         // content: "\2193"; // down
-        content: "\2191"; // up
+        // content: "\2191"; // up
+        content: "\2196"; // diagonal (up/left)
         display: inline-block;
         transform: translateY(-0.175em);
       }
+
+      &:last-child:after {
+        scale: -1 1;
+      }
+
     }
   }
 }
