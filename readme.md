@@ -2,6 +2,7 @@
 Here in Grand Rapids, MI (as in many other cities), [Seasonal Parking Restrictions](https://www.grandrapidsmi.gov/Government/Departments/Public-Works-Department/Seasonal-Parking-Restrictions) are in place during the winter months. The side of the street is determined by the date and time. This is a quick way to check which side of the street is currently available for parking.
 
 
+
 ## How to use
 1. Go to [oddevenparking.com](https://oddevenparking.com/)
 2. Pick whether your destination is on the odd or even side of the street
@@ -15,7 +16,7 @@ Here in Grand Rapids, MI (as in many other cities), [Seasonal Parking Restrictio
 
 
 ## How it works
-The date is pulled from the user's device and most of the magic is done using JS on the front end. The deployed version uses minimal server-side code currently but the logic should be moved where possible - see [WiP feature branch](https://github.com/awestmoreland/oddevenparking.com/tree/feature/convert-to-php).
+The date is pulled from the user's device and most of the magic is done using JS on the front end. The deployed version uses minimal server-side code currently but the logic should be moved where possible (WiP).
 
 Some alternate messaging is hard-coded into the markup and displayed/hidden as required by adding classnames. It's not pretty. It's not clever. It works. I never promised you a rose garden.
 

@@ -17,6 +17,7 @@ body {
   // overflow: hidden;
   font-family: var(--font-body);
   box-sizing: border-box;
+  min-height: 100vh; // I know, I know...
 
   *,
   *:before,
@@ -263,5 +264,50 @@ footer {
       box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.75)
     }
 
+  }
+}
+
+
+.collaborate {
+  position: absolute;
+  inset: auto 0 0;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        span {
+          animation-name: bounce;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
   }
 }

@@ -125,5 +125,9 @@
 
     <script src="scripts/scripts.js<?php echo '?'.filemtime('scripts/scripts.js'); ?>"></script>
 
+    <?php
+      include('./_collaborate.php');
+    ?>
+
   </body>
 </html>
