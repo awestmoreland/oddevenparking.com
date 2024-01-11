@@ -53,7 +53,7 @@ function myCallback() {
     bodyTag.setAttribute('data-move-required', (dayOfMonth == 31 || dayOfMonth == 29) ? 'false' : 'true');
 
     // Update proximity text
-    updateEach(textProximity, dateIsEven(dayOfMonth) ? 'furthest from' : 'closest to');
+    updateEach(textProximity, dateIsEven(dayOfMonth) ? evenDayText : oddDayText);
 
   }
 

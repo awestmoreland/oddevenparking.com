@@ -14,7 +14,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  // overflow: hidden;
   font-family: var(--font-body);
   box-sizing: border-box;
 
@@ -225,4 +225,43 @@ footer {
     background: var(--phase-even-color);
   }
 
+}
+
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 1.5em;
+
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25em;
+    width: 4em;
+
+    text-decoration: none;
+    border-radius: 0.25em;
+    font-size: 3em;
+    border: solid 0.1em transparent;
+    transition: all 0.15s ease-out;
+
+    color: var(--color-negative);
+
+    &.is-odd {
+      background: var(--phase-odd-color);
+    }
+
+    &.is-even {
+      background: var(--phase-even-color);
+    }
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.75)
+    }
+
+  }
 }
