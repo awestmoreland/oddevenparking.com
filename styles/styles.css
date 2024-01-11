@@ -15,7 +15,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
   font-family: var(--font-body);
   box-sizing: border-box;
 }
@@ -181,4 +180,35 @@ footer span[class] {
   background: var(--phase-even-color);
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;EACA;EACA;;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;EAGE;EACA;EACA;EACA;;;AAIJ;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAKA;EACE;EACA;EACA;;AAGF;EACE;;AAIA;EACE;;AAKF;EACE;;;AAOJ;EACE;;;AAKF;EACE;;;AAIJ;EACE;;;AAIA;EACE;;AAGF;EACE;EACA;;;AAOJ;EACE;;AAEA;EACE;EACA;;AAGF;EACE;;;AAIJ;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EAGE;EACA;EACA;;;AAMR;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAOF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;AAOR;EACE;EACA;EACA;;AAGF;EACE;;AAGF;EACE%22,%22file%22:%22styles.css%22%7D */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+.actions a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em;
+  width: 4em;
+  text-decoration: none;
+  border-radius: 0.25em;
+  font-size: 3em;
+  border: solid 0.1em transparent;
+  transition: all 0.15s ease-out;
+  color: var(--color-negative);
+}
+.actions a.is-odd {
+  background: var(--phase-odd-color);
+}
+.actions a.is-even {
+  background: var(--phase-even-color);
+}
+.actions a:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.75);
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22styles.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EAEA;EACA;;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;EAGE;EACA;EACA;EACA;;;AAIJ;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAKA;EACE;EACA;EACA;;AAGF;EACE;;AAIA;EACE;;AAKF;EACE;;;AAOJ;EACE;;;AAKF;EACE;;;AAIJ;EACE;;;AAIA;EACE;;AAGF;EACE;EACA;;;AAOJ;EACE;;AAEA;EACE;EACA;;AAGF;EACE;;;AAIJ;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EAGE;EACA;EACA;;;AAMR;EACE;EACA;EACA;;AAEA;EACE;EACA;;;AAMJ;EACE;EACA;EACA;EACA;;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAOF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;AAOR;EACE;EACA;EACA;;AAGF;EACE;;AAGF;EACE;;;AAMJ;EACE;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EACA;EAEA;;AAEA;EACE;;AAGF;EACE;;AAGF;EACE;EACA%22,%22file%22:%22styles.css%22%7D */
