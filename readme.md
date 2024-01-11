@@ -9,13 +9,13 @@ Here in Grand Rapids, MI (as in many other cities), [Seasonal Parking Restrictio
 
 **Alternatively, you can:**
 * Append the street number to the URL, e.g. [oddevenparking.com/123](https://oddevenparking.com/123)
-* Append `odd` or `even` to the URL, e.g. [oddevenparking.com/odd](https://oddevenparking.com/odd)
+* Append `odd` or `even` to the URL, e.g. [oddevenparking.com/even](https://evenevenparking.com/odd)
 
 **Bookmark the page for quick reference**
 
 
 ## How it works
-The date is pulled from the user's device and most of the magic is done using JS on the front end. The deployed version uses minimal server-side code currently but the logic should be moved where possible - see [WiP feature branch](tree/feature/convert-to-php).
+The date is pulled from the user's device and most of the magic is done using JS on the front end. The deployed version uses minimal server-side code currently but the logic should be moved where possible - see [WiP feature branch](https://github.com/awestmoreland/oddevenparking.com/tree/feature/convert-to-php).
 
 Some alternate messaging is hard-coded into the markup and displayed/hidden as required by adding classnames. It's not pretty. It's not clever. It works. I never promised you a rose garden.
 
