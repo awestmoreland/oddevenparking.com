@@ -18,6 +18,7 @@ function myCallback() {
   // -----------------
 
     const now = new Date();
+    monthInt = now.getMonth() + 1; // getMonth() returns 0-11
     dayOfMonth = now.getDate(); // today's day of month
     currentHour = now.getHours();
 
@@ -49,8 +50,8 @@ function myCallback() {
     bodyTag.setAttribute('data-date-is-even', dateIsEven(dayOfMonth) ? 'true' : 'false');
     bodyTag.setAttribute('data-side-matters', sideMatters(currentHour) ? 'true' : 'false');
 
-    // Edge case: it's the 29th or 31st, so two odd days in a row
-    bodyTag.setAttribute('data-move-required', (dayOfMonth == 31 || dayOfMonth == 29) ? 'false' : 'true');
+    // Edge case: it's the 31st or 2/29, so two odd days in a row:
+    bodyTag.setAttribute('data-move-required', (dayOfMonth == 31 || (dayOfMonth == 29 && monthInt == 2 ) ) ? 'false' : 'true');
 
     // Update proximity text
     updateEach(textProximity, dateIsEven(dayOfMonth) ? evenDayText : oddDayText);
@@ -78,3 +79,4 @@ function dateIsEven(testDate) {
 function sideMatters(testHour) {
   return(testHour > 0 || testHour < 18);
 }
+
