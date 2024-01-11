@@ -121,7 +121,7 @@ footer {
   footer {
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding-inline: 0.1em;
 
     span {
       font-size: 2em;
@@ -131,15 +131,9 @@ footer {
 
       &:first-child:before,
       &:last-child:after {
-        // content: "\2193"; // down
-        // content: "\2191"; // up
-        content: "\2196"; // diagonal (up/left)
+        content: "\2191"; // up
         display: inline-block;
         transform: translateY(-0.175em);
-      }
-
-      &:last-child:after {
-        scale: -1 1;
       }
 
     }
