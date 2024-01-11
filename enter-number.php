@@ -18,14 +18,12 @@
       </h1>
     </header>
     <div class="actions">
-        <a class="is-odd" href='/odd'>Odd</a>
-        <a class="is-even" href='/even'>Even</a>
-      </div>
-
-    <script src="scripts/scripts.js<?php echo '?'.filemtime('scripts/scripts.js'); ?>"></script>
+      <a class="is-odd" href='/odd'>Odd</a>
+      <a class="is-even" href='/even'>Even</a>
+    </div>
 
     <?php
-      include('./_collaborate.php');
+      include('./_page-footer.php');
     ?>
 
   </body>

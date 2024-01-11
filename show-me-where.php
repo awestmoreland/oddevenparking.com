@@ -123,10 +123,8 @@
       </p>
     </footer>
 
-    <script src="scripts/scripts.js<?php echo '?'.filemtime('scripts/scripts.js'); ?>"></script>
-
     <?php
-      include('./_collaborate.php');
+      include('./_page-footer.php');
     ?>
 
   </body>

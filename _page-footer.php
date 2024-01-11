@@ -10,3 +10,5 @@
         </span>
       </a>
     </div>
+
+    <script src="scripts/scripts.js<?php echo '?'.filemtime('scripts/scripts.js'); ?>"></script>
